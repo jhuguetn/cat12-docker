@@ -2,14 +2,14 @@ CAT12-docker
 ============
 Ready-to-use Docker image with the standalone version of the
 [Computational Anatomy Toolbox](http://www.neuro.uni-jena.de/cat/) (CAT) toolbox
-for [SPM](https://www.fil.ion.ucl.ac.uk/spm/).
+for [SPM](https://www.fil.ion.ucl.ac.uk/spm/). No MATLAB license required.
 
 Components
 ----------
 * Ubuntu 20.04 LTS (Focal Fossa)
-* MATLAB Compiler Runtime R2017b (Version 9.3)
+* MATLAB Compiler Runtime R2017b (version 9.3)
 * SPM12 standalone version (SPM12 r7771)
-* CAT12 toolbox (CAT12 r1733)
+* CAT12 toolbox (CAT12.7 r1733)
 
 Usage
 -----

@@ -4,7 +4,7 @@ MAINTAINER Jordi Huguet <jhuguet@barcelonabeta.org>
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-LABEL description="CAT12 r1743 docker image"
+LABEL description="CAT12 standalone docker image"
 LABEL maintainer="jhuguet@barcelonabeta.org"
 
 # set the working directory
@@ -40,7 +40,7 @@ ENV PATH="${PATH}:/opt/spm/standalone"
 ENV SPMROOT /opt/spm
 
 # install CAT12 as MCR toolbox at /opt/spm
-ENV CAT_VERSION 12
+ENV CAT_VERSION 12.7
 ENV CAT_REVISION r1733
 #RUN wget --progress=bar:force -P /tmp http://www.neuro.uni-jena.de/cat12/cat12_${CAT_REVISION}.zip \
 # && unzip -q /tmp/cat12_${CAT_REVISION}.zip -d /opt/mcr \
