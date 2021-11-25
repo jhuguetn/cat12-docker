@@ -30,20 +30,17 @@ ENV SPM_VERSION 12
 ENV SPM_REVISION r7771
 ENV MCR_INHIBIT_CTF_LOCK 1
 ENV SPM_HTML_BROWSER 0
-RUN wget --progress=bar:force -P /tmp http://www.neuro.uni-jena.de/cat12/cat12_latest_${MATLAB_VERSION}_MCR_Linux.zip \
- && unzip -q /tmp/cat12_latest_${MATLAB_VERSION}_MCR_Linux.zip -d /opt \
- && mv /opt/MCR_Linux /opt/spm \
- && /opt/spm/run_spm12.sh ${MCRROOT} quit \
+RUN wget --progress=bar:force -P /tmp http://www.neuro.uni-jena.de/cat12/CAT12.8_r1904_${MATLAB_VERSION}_MCR_Linux.zip \
+ && unzip -q /tmp/CAT12.8_r1904_${MATLAB_VERSION}_MCR_Linux.zip -d /opt \
+ && mv /opt/CAT12.8_r1904_${MATLAB_VERSION}_MCR_Linux /opt/spm \
+ && /opt/spm/run_spm12.sh ${MCRROOT} --version \
  && chmod +x /opt/spm/spm12 /opt/spm/*.sh \
  && rm -rf /tmp/*
 ENV PATH="${PATH}:/opt/spm/standalone"
 ENV SPMROOT /opt/spm
 
 # install CAT12 as MCR toolbox at /opt/spm
-ENV CAT_VERSION 12.7
-ENV CAT_REVISION r1733
-#RUN wget --progress=bar:force -P /tmp http://www.neuro.uni-jena.de/cat12/cat12_${CAT_REVISION}.zip \
-# && unzip -q /tmp/cat12_${CAT_REVISION}.zip -d /opt/mcr \
-# && rm -rf /tmp/* /opt/mcr/*MACOSX*
+ENV CAT_VERSION 12.8
+ENV CAT_REVISION r1904
 
 ENTRYPOINT ["cat_standalone.sh"]
