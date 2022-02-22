@@ -11,7 +11,7 @@ Components
 * Ubuntu 20.04 LTS (Focal Fossa)
 * MATLAB Compiler Runtime R2017b (version 9.3)
 * SPM12 standalone version (SPM12 r7771)
-* CAT12 toolbox (CAT12.8 r1904)
+* CAT12 toolbox (CAT12.8 r1933)
 
 Usage
 -----
@@ -25,7 +25,7 @@ Example (segmentation of T1w image)
 -----
 ```bash
  docker run -it --rm -v `pwd`/data:/data jhuguetn/cat12 \
- -b /opt/spm/standalone/cat_standalone_segment.txt \
+ -b /opt/spm/standalone/cat_standalone_segment.m \
  /data/my_dataset/sub-0001/anat/sub-0001_T1w.nii
 ```
 

@@ -25,22 +25,22 @@ RUN mkdir /tmp/mcr_install \
  && /tmp/mcr_install/install -destinationFolder /opt/mcr -agreeToLicense yes -mode silent
 ENV MCRROOT /opt/mcr/${MCR_VERSION}
 
-# install SPM12 Standalone at /opt/spm
+# install MCR/standalone version of SPM12 plus CAT12 at /opt/spm
 ENV SPM_VERSION 12
 ENV SPM_REVISION r7771
 ENV MCR_INHIBIT_CTF_LOCK 1
 ENV SPM_HTML_BROWSER 0
-RUN wget --progress=bar:force -P /tmp http://www.neuro.uni-jena.de/cat12/CAT12.8_r1904_${MATLAB_VERSION}_MCR_Linux.zip \
- && unzip -q /tmp/CAT12.8_r1904_${MATLAB_VERSION}_MCR_Linux.zip -d /opt \
- && mv /opt/CAT12.8_r1904_${MATLAB_VERSION}_MCR_Linux /opt/spm \
+ENV CAT_VERSION 12.8
+ENV CAT_REVISION r1933
+ENV CAT_FULLVERSION CAT${CAT_VERSION}_${CAT_REVISION}
+RUN wget --progress=bar:force -P /tmp http://www.neuro.uni-jena.de/cat12/${CAT_FULLVERSION}_${MATLAB_VERSION}_MCR_Linux.zip \
+ && unzip -q /tmp/${CAT_FULLVERSION}_${MATLAB_VERSION}_MCR_Linux.zip -d /opt \
+ && mv /opt/${CAT_FULLVERSION}_${MATLAB_VERSION}_MCR_Linux /opt/spm \
  && /opt/spm/run_spm12.sh ${MCRROOT} --version \
  && chmod +x /opt/spm/spm12 /opt/spm/*.sh \
  && rm -rf /tmp/*
 ENV PATH="${PATH}:/opt/spm/standalone"
 ENV SPMROOT /opt/spm
 
-# install CAT12 as MCR toolbox at /opt/spm
-ENV CAT_VERSION 12.8
-ENV CAT_REVISION r1904
 
 ENTRYPOINT ["cat_standalone.sh"]
