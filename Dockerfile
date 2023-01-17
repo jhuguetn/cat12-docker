@@ -11,8 +11,9 @@ LABEL maintainer="jhuguet@barcelonabeta.org"
 WORKDIR /root
 
 # install dependencies and prereqs
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
- && apt-get -y install wget nano unzip libxext6 libxt6 moreutils \
+ && apt-get -yq install wget nano unzip libxext6 libxt6 moreutils \
  && apt-get clean
 
 # install Matlab MCR at /opt/mcr
