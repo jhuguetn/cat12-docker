@@ -39,6 +39,7 @@ RUN wget --progress=bar:force -P /tmp http://www.neuro.uni-jena.de/cat12/${CAT_F
  && mv /opt/${CAT_FULLVERSION}_${MATLAB_VERSION}_MCR_Linux /opt/spm \
  && /opt/spm/run_spm12.sh ${MCRROOT} --version \
  && chmod +x /opt/spm/spm12 /opt/spm/*.sh \
+ && chmod +x /opt/spm/spm12_mcr/home/gaser/gaser/spm/spm12/toolbox/cat12/CAT.glnx86/CAT_* \
  && rm -rf /tmp/*
 RUN cp /opt/spm/spm12_mcr/home/gaser/gaser/spm/spm12/toolbox/cat12/cat_long_main.txt /opt/spm/spm12_mcr/home/gaser/gaser/spm/spm12/toolbox/cat12/cat_long_main.m
 ENV PATH="${PATH}:/opt/spm/standalone"
