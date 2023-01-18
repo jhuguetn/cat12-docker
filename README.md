@@ -10,8 +10,8 @@ Components
 ----------
 * Ubuntu 20.04 LTS (Focal Fossa)
 * MATLAB Compiler Runtime R2017b (version 9.3)
-* SPM12 standalone version (SPM12 r7771)
-* CAT12 toolbox (CAT12.8 r1933)
+* SPM standalone version (SPM12 r7771)
+* CAT toolbox (CAT12.8.1 r2042)
 
 Usage
 -----
