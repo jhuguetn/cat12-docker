@@ -40,7 +40,7 @@ RUN wget --progress=bar:force -P /tmp http://www.neuro.uni-jena.de/cat12/${CAT_F
  && chmod +x /opt/spm/spm12 /opt/spm/*.sh \
  && chmod +x /opt/spm/spm12_mcr/home/gaser/gaser/spm/spm12/toolbox/cat12/CAT.glnx86/CAT_* \
  && rm -rf /tmp/*
-RUN cp /opt/spm/spm12_mcr/home/gaser/gaser/spm/spm12/toolbox/cat12/cat_long_main.txt /opt/spm/spm12_mcr/home/gaser/gaser/spm/spm12/toolbox/cat12/cat_long_main.m
+RUN rm -f /opt/spm/spm12_mcr/home/gaser/gaser/spm/spm12/toolbox/cat12/cat_long_main.txt
 ENV PATH="${PATH}:/opt/spm/standalone"
 ENV SPMROOT /opt/spm
 
