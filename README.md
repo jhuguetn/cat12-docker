@@ -29,6 +29,21 @@ Example (segmentation of T1w image)
  /data/my_dataset/sub-0001/anat/sub-0001_T1w.nii
 ```
 
+Example using singularity (longitudinal segmentation)
+----
+
+You need to make sure to map `$HOME/.matlab` if you are running in contained
+mode, because the MCR will write into that folder.
+
+```bash
+singularity build cat12-latest.sif docker://jhuguetn/cat12:latest
+singularity run --cleanenv --contain \
+  -B $PWD:/data \
+  -B $HOME/.matlab \
+  cat12-latest.sif \
+  -b /opt/spm/standalone/cat_standalone_segment_long.m /data/my_dataset/sub-01/ses-0{1,2,3}/anat/sub-01_T1w.nii
+```
+
 Credits
 -------
 Jordi Huguet ([BarcelonaBeta Brain Research Center](http://barcelonabeta.org))
