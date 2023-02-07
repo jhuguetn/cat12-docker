@@ -1,6 +1,8 @@
 CAT12-docker
-[![GitHub release](https://img.shields.io/github/v/release/jhuguetn/cat12-docker)](https://github.com/jhuguetn/cat12-docker/releases)
-[![DockerHub pulls](https://img.shields.io/docker/pulls/jhuguetn/cat12)](https://hub.docker.com/r/jhuguetn/cat12/tags)
+[![GitHub release](https://img.shields.io/github/v/release/jhuguetn/cat12-docker?logo=github)](
+https://github.com/jhuguetn/cat12-docker/releases)
+[![DockerHub pulls](https://img.shields.io/docker/pulls/jhuguetn/cat12?logo=docker)](
+https://hub.docker.com/r/jhuguetn/cat12/tags)  
 ============
 Ready-to-use Docker image with the standalone version of the
 [Computational Anatomy Toolbox](http://www.neuro.uni-jena.de/cat/) (CAT) toolbox
