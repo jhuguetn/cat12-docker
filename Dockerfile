@@ -33,7 +33,7 @@ ENV SPM_HTML_BROWSER 0
 ENV CAT_VERSION 12.8.2
 ENV CAT_REVISION r2166
 ENV CAT_FULLVERSION CAT${CAT_VERSION}_${CAT_REVISION}
-ENV CAT_PATH  /opt/spm/spm12_mcr/home/gaser/gaser/spm/spm12/toolbox/cat12
+ENV CAT_PATH /opt/spm/spm12_mcr/home/gaser/gaser/spm/spm12/toolbox/cat12
 RUN wget --progress=bar:force -P /tmp http://www.neuro.uni-jena.de/cat12/${CAT_FULLVERSION}_${MATLAB_VERSION}_MCR_Linux.zip \
  && unzip -q /tmp/${CAT_FULLVERSION}_${MATLAB_VERSION}_MCR_Linux.zip -d /opt \
  && mv /opt/${CAT_FULLVERSION}_${MATLAB_VERSION}_MCR_Linux /opt/spm \
