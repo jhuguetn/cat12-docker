@@ -41,7 +41,7 @@ singularity run --cleanenv --contain \
   -B $PWD:/data \
   -B $HOME/.matlab \
   cat12-latest.sif \
-  -s /opt/spm -m /opt/mcr/v93 -b /opt/spm/standalone/cat_standalone_segment_long.m /data/my_dataset/sub-01/ses-0{1,2,3}/anat/sub-01_T1w.nii
+  -b /opt/spm/standalone/cat_standalone_segment_long.m /data/my_dataset/sub-01/ses-0{1,2,3}/anat/sub-01_T1w.nii
 ```
 
 Credits

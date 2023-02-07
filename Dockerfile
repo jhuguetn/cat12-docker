@@ -33,14 +33,14 @@ ENV SPM_HTML_BROWSER 0
 ENV CAT_VERSION 12.8.1
 ENV CAT_REVISION r2042
 ENV CAT_FULLVERSION CAT${CAT_VERSION}_${CAT_REVISION}
+ENV CAT_PATH  /opt/spm/spm12_mcr/home/gaser/gaser/spm/spm12/toolbox/cat12
 RUN wget --progress=bar:force -P /tmp http://www.neuro.uni-jena.de/cat12/${CAT_FULLVERSION}_${MATLAB_VERSION}_MCR_Linux.zip \
  && unzip -q /tmp/${CAT_FULLVERSION}_${MATLAB_VERSION}_MCR_Linux.zip -d /opt \
  && mv /opt/${CAT_FULLVERSION}_${MATLAB_VERSION}_MCR_Linux /opt/spm \
  && /opt/spm/run_spm12.sh ${MCRROOT} --version \
- && chmod +x /opt/spm/spm12 /opt/spm/*.sh \
- && chmod +x /opt/spm/spm12_mcr/home/gaser/gaser/spm/spm12/toolbox/cat12/CAT.glnx86/CAT_* \
+ && chmod +x /opt/spm/spm12 /opt/spm/*.sh ${CAT_PATH}/CAT.glnx86/CAT_* \
+ && cp -v ${CAT_PATH}/cat_long_main.txt ${CAT_PATH}/cat_long_main.m \
  && rm -rf /tmp/*
-RUN rm -f /opt/spm/spm12_mcr/home/gaser/gaser/spm/spm12/toolbox/cat12/cat_long_main.txt
 ENV PATH="${PATH}:/opt/spm/standalone"
 ENV SPMROOT /opt/spm
 
